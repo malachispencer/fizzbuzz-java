@@ -152,6 +152,19 @@ public class FizzBuzzTest {
 
             assertEquals("Buzz", buzz);
         }
+
+        @Test
+        @DisplayName("prints number if number is not multiple of 3 or 5")
+        void nonMultiple() throws Exception {
+            String stdOut = tapSystemOut(() -> {
+                FizzBuzz.printSequence(1);
+            });
+
+            String[] array = stdOut.split("\r\n");
+            String n = array[array.length - 1];
+
+            assertEquals("1", n);
+        }
     }
 
 }
