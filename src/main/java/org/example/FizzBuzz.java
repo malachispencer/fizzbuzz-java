@@ -19,6 +19,13 @@ public class FizzBuzz {
 
     public static String[] array(int n) {
         String[] sequence = new String[n];
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                sequence[i - 1] = "FizzBuzz";
+            }
+        }
+
         return sequence;
     }
 }

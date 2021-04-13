@@ -1,8 +1,11 @@
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -46,8 +49,25 @@ public class FizzBuzzTest {
         @DisplayName("returns an array of size n")
         void shouldReturnArrayOfSizeN() {
             String[] sequence = FizzBuzz.array(15);
-            int length = sequence.length;
-            assertEquals(15, length);
+            int sequenceLength = sequence.length;
+            assertEquals(15, sequenceLength);
+        }
+
+        @Test
+        @DisplayName("multiples of 3 and 5 are FizzBuzz")
+        void multiplesOfThreeAndFive() {
+            String[] sequence = FizzBuzz.array(30);
+            ArrayList<String> multipleResults = new ArrayList<>();
+
+            for (int i = 1; i <= sequence.length; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    multipleResults.add(sequence[i - 1]);
+                }
+            }
+
+            for (String result : multipleResults) {
+                assertEquals("FizzBuzz", result);
+            }
         }
     }
 
