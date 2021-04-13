@@ -79,8 +79,20 @@ public class FizzBuzzTest {
             String[] sequence = FizzBuzz.array(9);
 
             for (int i = 1; i <= sequence.length; i++) {
-                if (i % 3 == 0) {
+                if (i % 3 == 0 && i % 5 != 0) {
                     assertEquals("Fizz", sequence[i - 1]);
+                }
+            }
+        }
+
+        @Test
+        @DisplayName("multiples of 5 are Buzz")
+        void multiplesOfFive() {
+            String[] sequence = FizzBuzz.array(20);
+
+            for (int i = 1; i <= sequence.length; i++) {
+                if (i % 5 == 0 && i % 3 != 0) {
+                    assertEquals("Buzz", sequence[i - 1]);
                 }
             }
         }

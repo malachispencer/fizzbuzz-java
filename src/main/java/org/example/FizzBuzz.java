@@ -25,6 +25,8 @@ public class FizzBuzz {
                 sequence[i - 1] = "FizzBuzz";
             } else if (i % 3 == 0) {
                 sequence[i - 1] = "Fizz";
+            } else if (i % 5 == 0) {
+                sequence[i - 1] = "Buzz";
             }
         }
 
