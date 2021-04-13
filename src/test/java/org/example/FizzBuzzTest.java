@@ -96,6 +96,18 @@ public class FizzBuzzTest {
                 }
             }
         }
+
+        @Test
+        @DisplayName("if number is not multiple of 3 or 5, it's itself")
+        void nonMultiples() {
+            String[] sequence = FizzBuzz.array(15);
+
+            for (int i = 1; i <= sequence.length; i++) {
+                if (i % 3 != 0 && i % 5 != 0) {
+                    assertEquals(Integer.toString(i), sequence[i - 1]);
+                }
+            }
+        }
     }
 
 }

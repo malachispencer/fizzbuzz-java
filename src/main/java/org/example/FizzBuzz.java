@@ -27,6 +27,8 @@ public class FizzBuzz {
                 sequence[i - 1] = "Fizz";
             } else if (i % 5 == 0) {
                 sequence[i - 1] = "Buzz";
+            } else {
+                sequence[i - 1] = Integer.toString(i);
             }
         }
 
