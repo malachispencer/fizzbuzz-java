@@ -1,14 +1,15 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FizzBuzzTest {
     @Nested
@@ -107,6 +108,36 @@ public class FizzBuzzTest {
                     assertEquals(Integer.toString(i), sequence[i - 1]);
                 }
             }
+        }
+    }
+
+    @Nested
+    @DisplayName("FizzBuzz.printSequence")
+    public class PrintSequence {
+        @Test
+        @DisplayName("prints FizzBuzz to console if multiple of 3 and 5 is in sequence")
+        void multipleOfThreeAndFive() throws Exception {
+            String stdOut = tapSystemOut(() -> {
+                FizzBuzz.printSequence(15);
+            });
+
+            String[] array = stdOut.split("\r\n");
+            String fizzBuzz = array[array.length - 1];
+
+            assertEquals("FizzBuzz", fizzBuzz);
+        }
+
+        @Test
+        @DisplayName("prints Fizz to console if number is multiple of 3")
+        void multipleOfThree() throws Exception {
+            String stdOut = tapSystemOut(() -> {
+                FizzBuzz.printSequence(3);
+            });
+
+            String[] array = stdOut.split("\r\n");
+            String fizz = array[array.length - 1];
+
+            assertEquals("Fizz", fizz);
         }
     }
 
