@@ -7,9 +7,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FizzBuzzTest {
     @Test
-    @DisplayName("Multiple of 3 and 5 should return FizzBuzz")
+    @DisplayName("Should return FizzBuzz if given multiple of 3 and 5")
     public void shouldReturnFizzBuzz() {
         String result = FizzBuzz.of(15);
         assertEquals("FizzBuzz", result );
+    }
+
+    @Test
+    @DisplayName("Should return Fizz if given multiple of 3")
+    public void shouldReturnFizz() {
+        String result = FizzBuzz.of(3);
+        assertEquals("Fizz", result);
     }
 }
