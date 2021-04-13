@@ -139,6 +139,19 @@ public class FizzBuzzTest {
 
             assertEquals("Fizz", fizz);
         }
+
+        @Test
+        @DisplayName("prints Buzz to console if number is multiple of 5")
+        void multipleOfFive() throws Exception {
+            String stdOut = tapSystemOut(() -> {
+                FizzBuzz.printSequence(5);
+            });
+
+            String[] array = stdOut.split("\r\n");
+            String buzz = array[array.length - 1];
+
+            assertEquals("Buzz", buzz);
+        }
     }
 
 }
