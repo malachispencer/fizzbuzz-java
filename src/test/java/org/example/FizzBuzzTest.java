@@ -19,4 +19,11 @@ public class FizzBuzzTest {
         String result = FizzBuzz.of(3);
         assertEquals("Fizz", result);
     }
+
+    @Test
+    @DisplayName("Should return Buzz if given multiple of 5")
+    public void shouldReturnBuzz() {
+        String result = FizzBuzz.of(5);
+        assertEquals("Buzz", result);
+    }
 }
