@@ -16,4 +16,9 @@ public class FizzBuzz {
             return Integer.toString(n);
         }
     }
+
+    public static String[] array(int n) {
+        String[] sequence = new String[n];
+        return sequence;
+    }
 }
