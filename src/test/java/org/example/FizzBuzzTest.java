@@ -26,4 +26,11 @@ public class FizzBuzzTest {
         String result = FizzBuzz.of(5);
         assertEquals("Buzz", result);
     }
+
+    @Test
+    @DisplayName("Should return string of n if neither multiple of 3 or 5")
+    public void shouldReturnStringN() {
+        String result = FizzBuzz.of(1);
+        assertEquals("1", result);
+    }
 }
