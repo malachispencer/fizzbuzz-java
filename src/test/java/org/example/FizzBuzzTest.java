@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -65,8 +66,22 @@ public class FizzBuzzTest {
                 }
             }
 
+            assertEquals(2, multipleResults.size());
+
             for (String result : multipleResults) {
                 assertEquals("FizzBuzz", result);
+            }
+        }
+
+        @Test
+        @DisplayName("multiples of 3 are Fizz")
+        void multiplesOfThree() {
+            String[] sequence = FizzBuzz.array(9);
+
+            for (int i = 1; i <= sequence.length; i++) {
+                if (i % 3 == 0) {
+                    assertEquals("Fizz", sequence[i - 1]);
+                }
             }
         }
     }
